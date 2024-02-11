@@ -13,5 +13,9 @@ pipeline {
                 echo 'Automatic Test'
             }
         }
+        stage('Deploy') {
+            steps {
+                echo 'Automatic Test'
+            }
     }
 }
