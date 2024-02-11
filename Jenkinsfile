@@ -8,5 +8,10 @@ pipeline {
                 echo 'Automatic Build'
             }
         }
+         stage('Test') {
+            steps {
+                echo 'Automatic Test'
+            }
+        }
     }
 }
