@@ -1,15 +1,18 @@
 {
+   
   "name": "frontend",
   "version": "0.0.1",
+  "packageName":"Frontend-ui",
+  "distPath":"projects/my-library/dist",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "packagr":"ng-packagr -p projects/my-library/ng-package.json",
-    "build:lib":"ng-packagr -p projects/my-library/ng-package.json",
-    "pack": " cd projects/my-library/ng-package.json && npm pack"
+    "packagr":"ng-packagr -p projects/my-library/package.json",
+    "build:lib":"ng-packagr -p projects/my-library/package.json",
+    "pack": " cd projects/my-library/dist && npm pack"
   },
   "private": false,
   "dependencies": {
