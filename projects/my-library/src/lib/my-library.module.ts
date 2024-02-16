@@ -5,27 +5,34 @@ import { UserAcademicModule } from './user-academic/user-academic.module';
 import { UserDetailsModule } from './user-details/user-details.module';
 import { UserPerformanceModule } from './user-performance/user-performance.module';
 import { RouterModule, Routes } from '@angular/router';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 //path ka value me never use /
 const routes: Routes = [
+ {path:'' ,
+  component:MyLibraryComponent,
+  children:[
   //Lazy loding module
-{ path: '', 
+{ path: ':auth', 
     loadChildren: () => import('./user-authentication/user-authentication.module').then(m => m.UserAuthenticationModule),
 },
-{ path: 'details', 
+{ path: ':details', 
    loadChildren: () => import('./user-details/user-details.module').then(m => m.UserDetailsModule),
 },
-{ path: 'academic', 
+{ path: ':academic', 
   loadChildren: () => import('./user-academic/user-academic.module').then(m => m.UserAcademicModule),
  },
- { path: 'performance', 
+ { path: ':performance', 
  loadChildren: () => import('./user-performance/user-performance.module').then(m => m.UserPerformanceModule),
-}
+}]}
 ];
 
 @NgModule({
   declarations: [
-    MyLibraryComponent
+    MyLibraryComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     RouterModule.forChild(routes),

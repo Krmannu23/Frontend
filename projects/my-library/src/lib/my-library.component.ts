@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lib-my-library',
-  template: `
-    <p>
-      my-library works!
-    </p>
-  `,
+  templateUrl: './my-library.component.html',
   styles: [
   ]
 })
