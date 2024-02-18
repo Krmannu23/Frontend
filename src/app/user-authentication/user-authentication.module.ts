@@ -6,7 +6,7 @@ import { UserlogoutComponent } from './userlogout/userlogout.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes:Routes=[
-  {path:'login',component:UserloginComponent},
+  {path:'',component:UserloginComponent},
   {path:'register',component:UserregisterComponent},
   {path:'logout',component:UserlogoutComponent}
 ]
