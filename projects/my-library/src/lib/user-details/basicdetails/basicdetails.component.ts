@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageControlService } from '../../local-services/page-control.service';
 
 @Component({
   selector: 'lib-basicdetails',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicdetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private componentWisePageControl:PageControlService) { }
 
   ngOnInit(): void {
+  }
+  goNext(){
+    this.componentWisePageControl.nextNav(true)
   }
 
 }

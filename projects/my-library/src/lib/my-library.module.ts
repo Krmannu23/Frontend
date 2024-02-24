@@ -6,6 +6,9 @@ import { UserPerformanceModule } from './user-performance/user-performance.modul
 import { RouterModule, Routes } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
+import { ApplicationHttpInterceptor } from './application-interceptor';
+import { MyLibraryService } from './my-library.service';
 
 //path ka value me never use /
 const routes: Routes = [
@@ -38,6 +41,20 @@ const routes: Routes = [
   exports: [
     MyLibraryComponent,
     RouterModule
-  ]
+  ],
+  providers:[
+    HttpClient,
+    // {
+    //   provide:Http,
+    //   useFactory:httpFactory,
+    //   deps:[XHRBackend,RequestOptions] //old concept used in project
+    // },
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ApplicationHttpInterceptor,
+    multi: true
+  },
+  MyLibraryService
+]
 })
 export class MyLibraryModule { }

@@ -6,11 +6,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { UsercollegedetailsComponent } from './usercollegedetails/usercollegedetails.component';
 import { UsersemesterwiseMarksComponent } from './usercollegedetails/usersemesterwise-marks/usersemesterwise-marks.component';
 import { AddressdetailsComponent } from './addressdetails/addressdetails.component';
+import { BasicResolver } from '../Resolver/BasicResolver';
 
 const routes: Routes = [
   {
     path: 'basic',
     component: BasicdetailsComponent,
+    data:{
+      currentPage:'basic',
+      refList:[
+        'initials',
+        'country'
+      ]
+    },
+    resolve:{basicPageData:BasicResolver}
   },
   {
     path: 'schooling',
