@@ -7,7 +7,7 @@ import { ReadonlyCollegeComponent } from './readonly-college/readonly-college.co
 
 const routes:Routes=[
   {path:'tenth',component:ReadonlyTenthComponent},
-  {path:'Twelfth',component:ReadonlyTwelfthComponent},
+  {path:'twelfth',component:ReadonlyTwelfthComponent},
   {path:'college',component:ReadonlyCollegeComponent}
 ]
 
